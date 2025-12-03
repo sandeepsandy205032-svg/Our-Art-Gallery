@@ -1,0 +1,288 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Art Gallery</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+.navbar { 
+  position: sticky; 
+  top: 0; 
+  z-index: 1000;
+  height: 80px;
+}
+.custom-navbar {
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url(https://img.freepik.com/premium-photo/watercolor-paint-texture-with-soft-effect_965649-10767.jpg) ;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border: 2px solid rgb(255, 255, 255);
+  color:black;
+  margin:0;
+  padding:0;
+}
+
+
+.box {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 35px rgba(255,255,255,0.25);
+  padding: 30px;
+  margin-top: 30px;
+  border-radius: 20px;
+}
+
+
+@media(max-width: 576px){
+  .box { padding: 15px; }
+}
+
+
+.widget {
+  background: rgba(255,255,255,0.15);
+  padding: 20px;
+  border-radius: 15px;
+  text-align:center;
+  cursor:pointer;
+  box-shadow:0 6px 25px rgba(0,0,0,0.3);
+  transition:0.3s;
+  position:relative;
+}
+
+.widget:hover { transform: scale(1.05); }
+
+.popup-base {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%) scale(0.5);
+  width:90%;
+  max-width:350px;
+  background: rgba(255,255,255,0.15);
+  color:#222;
+  border-radius:18px;
+  padding:15px;
+  box-shadow:0 0 40px rgba(0,0,0,0.4);
+  opacity:0;
+  pointer-events:none;
+  transition:0.35s;
+}
+
+
+.widget:hover .popup-base {
+  opacity:1;
+  pointer-events:auto;
+  transform:translate(-50%, -50%) scale(1);
+}
+
+
+.popup-overview { background:white; }
+.popup-features { background:#ffe4f0; }
+.popup-tech { background:#e5f4ff; }
+
+
+.popup-title {
+  font-weight:bold;
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+
+.team-card { perspective:1000px; }
+.team-inner {
+  width:100%;
+  height:260px;
+  transition:0.9s;
+  transform-style:preserve-3d;
+  border-radius:20px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.25);
+}
+
+.team-card:hover .team-inner {
+  transform:rotateY(180deg) scale(1.03);
+}
+
+.team-front, .team-back {
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:20px;
+}
+
+.team-front img { width:100%; height:100%; object-fit:cover; }
+
+.team-back {
+  background:linear-gradient(135deg,#43cea2,#185a9d);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  transform:rotateY(180deg);
+  color:white;
+}
+
+
+footer {
+  margin-top:40px;
+  background: rgba(255,255,255,0.15);
+  padding:12px;
+  text-align:center;
+  border-radius:10px;
+}
+
+</style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+  <div class="container">
+    <a class="navbar-brand font-bold" href="index.html">
+      <i class="bi bi-palette"></i> Art Gallery
+    </a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door-fill"></i>Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="Natureart.html"><i class="bi bi-sun"></i>Nature Arts</a></li>
+        <li class="nav-item"><a class="nav-link" href="photography.html"><i class="bi bi-camera-fill"></i>Photography</a></li>
+        <li class="nav-item"><a class="nav-link" href="space.html"><i class="bi bi-rocket-takeoff-fill"></i>Space</a></li>
+        <li class="nav-item"><a class="nav-link" href="culturalart.html"><i class="bi bi-globe-central-south-asia"></i>Cultural Arts</a></li>
+        <li class="nav-item"><a class="nav-link" href="rareanimals.html"><i class="bi bi-bug-fill"></i>Rare Animals</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-pencil-square"></i>About</a></li>
+        <li class="nav-item">
+          <a class="nav-link" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <i class="bi bi-box-arrow-in-right"></i>Login Now!
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+
+<div class="box">
+  <h1 class="text-center fw-bold mb-4"><i class="bi bi-brush"></i> About Our Art Gallery</h1>
+
+  <h2>Project Overview</h2>
+  <p>The Art Gallery website is a creative platform developed to showcase different species of nature such as Birds, Animals, Fishes, and Sea Animals. Each creature is shown with real photographs, an image carousel, descriptions, audio, and videos. We focused on user experience, simplicity, and visual presentation using animations and smooth transitions.</p>
+
+  <h2>Design Approach</h2>
+  <p>We chose a clean, modern UI with balanced spacing, gradients, and responsive design powered by Bootstrap. The layout is kept simple so users can navigate smoothly and enjoy a museum-like digital experience.</p>
+
+  <br>
+
+  <div class="row g-4">
+
+    <div class="col-md-4 col-12">
+      <div class="widget">
+        <i class="bi bi-file-text"></i>
+        <h4>Overview</h4>
+
+        <div class="popup-base popup-overview">
+          <div class="popup-title"> Future Enhancements</div>
+          <p>Add database support for storing user data and artwork.</p>
+          <p>Add admin panel to upload new art.</p>
+          <p>Add search and filter options.</p>
+          <p>Add user comments and feedback sections.</p>
+          <p>Implement purchase or download options.</p>
+          <p>Integrate AI-based artwork recommendations.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4 col-12">
+      <div class="widget">
+        <i class="bi bi-magic"></i>
+        <h4>Features</h4>
+
+        <div class="popup-base popup-features">
+          <div class="popup-title">Features</div>
+          <p>1. Multi-Category Navigation</p>
+          <p>2. Smooth Visual Animations</p>
+          <p>3. Fully Responsive Layout</p>
+          <p>4. Image Carousel Slider</p>
+          <p>5. Glassmorphism & Gradient UI</p>
+          <p>6. Clean & User-Friendly Navigation</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4 col-12">
+      <div class="widget">
+        <i class="bi bi-cpu"></i>
+        <h4>Technologies</h4>
+
+        <div class="popup-base popup-tech">
+          <div class="popup-title">Technologies</div>
+          <p>1. HTML (HyperText Markup Language)</p>
+          <p>2. CSS (Cascading Style Sheets)</p>
+          <p>3. CSS3 (Advanced Styling)</p>
+          <p>4. Bootstrap 5 Framework</p>
+          <p>5. Bootstrap Icons</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<br>
+
+<h2 class="fw-bold text-center mb-3"><i class="bi bi-people-fill"></i> Our Team</h2>
+
+<div class="row g-4">
+
+  <div class="col-md-4 col-12">
+    <div class="team-card">
+      <div class="team-inner">
+        <div class="team-front"><img src="./images/sandeep.jpeg"></div>
+        <div class="team-back"><h4>Mr. Y.Sandeep</h4><p>Lead Developer</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-12">
+    <div class="team-card">
+      <div class="team-inner">
+        <div class="team-front"><img src="./images/nakshatra.jpeg"></div>
+        <div class="team-back"><h4>Ms.Y.Nakshatra</Ms></h4><p>UI Designer</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 col-12">
+    <div class="team-card">
+      <div class="team-inner">
+        <div class="team-front"><img src="./images/usha.jpeg"></div>
+        <div class="team-back"><h4>Ms.S.Usha Rani</h4><p>Content Writer</p></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2025 Art Gallery — Team Project</footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo-1</title>
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <script src="./js/bootstrap.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    body {
+      background: #f0f2f5;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .art-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 40px;
+      margin: 60px auto;
+      width: 90%;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeIn 1.4s forwards;
+    }
+
+    .art-image img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+      animation: slideLeft 1.5s;
+    }
+
+    .art-info {
+      flex: 1;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      animation: slideRight 1.5s;
+    }
+
+    .art-info h2 {
+      font-weight: 700;
+      color: #0d6efd;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideLeft {
+      from { transform: translateX(-50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideRight {
+      from { transform: translateX(50px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    audio, video {
+      display: block;
+      margin: 20px auto;
+      width: 70%;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+    <div class="container">
+      <a class="navbar-brand fs-3 fw-bold" href="index.html"><i class="bi bi-palette"></i>Art Gallery</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door-fill" style="font-size:30px;"></i>Home</a></li>&nbsp;&nbsp;
+          <li class="nav-item"><a class="nav-link" href="Natureart.html"><i class="bi bi-sun" style="font-size:30px;"></i>Nature Arts</a></li>&nbsp;&nbsp;
+          <li class="nav-item"><a class="nav-link" href="photography.html"><i class="bi bi-camera-fill" style="font-size:30px;"></i> Photography</a></li>&nbsp;&nbsp;
+          <li class="nav-item"><a class="nav-link" href="space.html"><i class="bi bi-rocket-takeoff-fill" style="font-size:30px;"></i>Space</a></li>&nbsp;&nbsp;
+          <li class="nav-item"><a class="nav-link" href="rareanimals.html"><i class="bi bi-bug-fill" style="font-size:30px;"></i>Rare Animals</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-pencil-square" style="font-size:30px;"></i>About</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html"><i class="bi bi-box-arrow-in-right" style="font-size:30px;"></i>Login Now!</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="art-container">
+
+
+  <div class="art-image">
+    <img src="./images/photo1.jpg">
+  </div>
+
+  <div class="art-info">
+    <h2> Earthrise</h2>
+    <p>
+     Photographer: William A. (Bill) Anders (Apollo 8 astronaut). 
+    <p>
+      When: December 24, 1968 (Apollo 8 lunar orbit; the color shot is time-stamped during the mission). 
+    </p>
+     <p>
+      Where it was taken: From lunar orbit aboard the Apollo 8 spacecraft — the Earth rising above the Moon’s horizon. 
+    </p>
+    <p>
+    About the picture:
+    This image shows Earth appearing to “rise” over the Moon’s barren surface as seen by the Apollo 8 crew — the first humans to orbit the Moon. It was taken with a modified Hasselblad 500 EL camera loaded with 70 mm Ektachrome film and quickly became one of the most influential environmental photographs ever, credited with helping change how people think about Earth as a single fragile planet.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
